@@ -94,7 +94,7 @@ export function SetTools() {
     },
   ]
   return (
-    <div className="mt-40">
+    <div className="mt-20 md:mt-40">
       <h1 className="text-center text-[24px] md:text-[42px] lg:text-[60px] font-bold text-black dark:text-white">Skill & Tools</h1>
       <div className="mt-10 grid grid-cols-2 md:grid-cols-6 w-[80%] md:w-[70%] items-center justify-center gap-4 mx-auto">
         {tools.map((tool, i) => {

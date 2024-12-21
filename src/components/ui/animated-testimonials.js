@@ -131,7 +131,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
             ))}
           </div>
 
-          <div className="flex gap-4 pt-12 md:pb-20 md:pt-0">
+          <div className="flex gap-4 pt-2 md:pb-20 md:pt-0">
             <button onClick={handlePrev} className="h-7 w-7 rounded-full bg-gray-300 dark:bg-neutral-800 flex items-center justify-center group/button">
               <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>

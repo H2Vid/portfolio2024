@@ -4,17 +4,17 @@ import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collis
 import Link from "next/link"
 
 const HeroSection = () => {
-  // Cek apakah ada preferensi mode yang tersimpan di localStorage
-  const [darkMode, setDarkMode] = useState(false)
+  // Default mode adalah dark
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode")
-    if (savedMode === "true") {
-      setDarkMode(true)
-      document.documentElement.classList.add("dark")
-    } else {
+    if (savedMode === "false") {
       setDarkMode(false)
       document.documentElement.classList.remove("dark")
+    } else {
+      setDarkMode(true)
+      document.documentElement.classList.add("dark")
     }
   }, [])
 

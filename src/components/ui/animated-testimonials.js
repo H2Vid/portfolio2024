@@ -73,7 +73,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex justify-between flex-col py-4 md:ml-12">
+        <div className="flex justify-between flex-col py-4">
           <motion.div
             key={active}
             initial={{
@@ -93,7 +93,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold dark:text-white text-black">{testimonials[active].name}</h3>
+            <h3 className="text-2xl -mt-48 md:mt-0 font-bold dark:text-white text-black">{testimonials[active].name}</h3>
             <Link href={testimonials[active].designation || "#"} className="text-sm text-gray-700 dark:text-neutral-500">
               {testimonials[active].secAlt || testimonials[active].designation}
             </Link>
@@ -123,7 +123,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
               ))}
             </motion.p>
           </motion.div>
-          <div className="border-gray-700  w-full flex flex-wrap gap-2">
+          <div className="border-gray-700 mt-8 w-full flex flex-wrap gap-2">
             {testimonials[active].tech.map((tech, index) => (
               <div key={index} className="drop-shadow-sm inline px-3 py-1 rounded-md bg-neutral-200 dark:bg-slate-900 text-sm text-black dark:text-white">
                 {tech}
@@ -131,7 +131,7 @@ export const AnimatedTestimonials = ({ testimonials, autoplay = false }) => {
             ))}
           </div>
 
-          <div className="flex gap-4 pt-2 md:pb-20 md:pt-0">
+          <div className="flex gap-4 mt-8 md:pb-20 md:pt-0">
             <button onClick={handlePrev} className="h-7 w-7 rounded-full bg-gray-300 dark:bg-neutral-800 flex items-center justify-center group/button">
               <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
             </button>

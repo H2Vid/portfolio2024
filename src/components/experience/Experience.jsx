@@ -48,7 +48,7 @@ const Experience = () => {
         <h1 className="font-bold text-2xl">Experience &</h1>
         <p className="text-sm font-light">Certificate</p>
       </div>
-      <Accordion collapseAll flush={true} className="space-y-4 border-none w-full lg:w-[80%]">
+      <Accordion collapseAll flush={true} className="space-y-4 border-none mx-auto w-[80%]">
         {dataExperience.map((data, i) => {
           return (
             <Accordion.Panel key={i}>

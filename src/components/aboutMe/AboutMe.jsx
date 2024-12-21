@@ -9,8 +9,8 @@ const AboutMe = () => {
 
  `
   return (
-    <div className="w-[80%] mx-auto text-center overflow-hidden">
-      <h1 className="text-[px] md:text-[42px] lg:text-[60px] font-bold text-black dark:text-white">About Me</h1>
+    <div className="w-[80%] mx-auto overflow-hidden">
+      <h1 className="text-center text-[32px] md:text-[42px] lg:text-[60px] font-bold text-black dark:text-white">About Me</h1>
       <TextGenerateEffect words={word} />
     </div>
   )

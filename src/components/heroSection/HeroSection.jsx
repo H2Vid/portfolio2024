@@ -1,14 +1,16 @@
 "use client"
 import React, { useState, useEffect } from "react"
 import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision"
-import Link from "next/link"
 
 const HeroSection = () => {
   // Default mode adalah dark
   const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
+    // Cek localStorage untuk pengaturan dark mode yang disimpan
     const savedMode = localStorage.getItem("darkMode")
+
+    // Jika ada pengaturan sebelumnya di localStorage
     if (savedMode === "false") {
       setDarkMode(false)
       document.documentElement.classList.remove("dark")
@@ -23,6 +25,7 @@ const HeroSection = () => {
     setDarkMode(newMode)
     localStorage.setItem("darkMode", newMode.toString())
 
+    // Sesuaikan kelas pada <html> berdasarkan mode
     if (newMode) {
       document.documentElement.classList.add("dark")
     } else {

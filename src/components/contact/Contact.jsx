@@ -34,31 +34,29 @@ const Contact = () => {
     },
   ]
   return (
-    <>
-      <section className="mt-10">
-        <div className="lg:flex  px-6 py-12 mx-auto">
-          <div className="lg:w-[30%]">
-            <p className="font-semibold text-green-500 dark:text-green-400 text-3xl"> {`Let's Connect !!!`} </p>
+    <section className="mt-40 mb-20">
+      <div className="lg:flex  px-6 py-12 mx-auto">
+        <div className="lg:w-[30%]">
+          <p className="font-semibold text-green-500 dark:text-green-400 text-3xl"> {`Let's Connect !!!`} </p>
 
-            <h1 className="mt-2 text-sm text-white">you can contact me with this</h1>
-          </div>
-
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:w-[70%] mt-10 lg:mt-0">
-            {datacontact.map((info, i) => {
-              return (
-                <div key={i} className="flex space-x-5 items-center text-green-500 font-normal">
-                  <span>{info.icon}</span>
-                  <div>
-                    <h2 className="text-green-500">{info.label}</h2>
-                    <a href={info.link}>{info.to}</a>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <h1 className="mt-2 text-sm text-white">you can contact me with this</h1>
         </div>
-      </section>
-    </>
+
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:w-[70%] mt-10 lg:mt-0">
+          {datacontact.map((info, i) => {
+            return (
+              <div key={i} className="flex space-x-5 items-center text-green-500 font-normal">
+                <span>{info.icon}</span>
+                <div>
+                  <h2 className="text-green-500">{info.label}</h2>
+                  <a href={info.link}>{info.to}</a>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
   )
 }
 

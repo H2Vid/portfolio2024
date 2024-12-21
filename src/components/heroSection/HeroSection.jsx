@@ -1,7 +1,35 @@
-import React from "react"
+"use client"
+import React, { useState, useEffect } from "react"
 import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision"
+import Link from "next/link"
 
 const HeroSection = () => {
+  // Cek apakah ada preferensi mode yang tersimpan di localStorage
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode")
+    if (savedMode === "true") {
+      setDarkMode(true)
+      document.documentElement.classList.add("dark")
+    } else {
+      setDarkMode(false)
+      document.documentElement.classList.remove("dark")
+    }
+  }, [])
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode
+    setDarkMode(newMode)
+    localStorage.setItem("darkMode", newMode.toString())
+
+    if (newMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }
+
   return (
     <BackgroundBeamsWithCollision>
       <div className="flex flex-col items-center justify-center">
@@ -16,9 +44,13 @@ const HeroSection = () => {
             </div>
           </div>
         </h1>
-        <div>
-          <button>tes</button>
-          <button>tes</button>
+        <div className="flex space-x-5 justify-center">
+          <a href="/cv/DAVID SITOMPUL-CV.pdf" download={true}>
+            <button className="bg-[#368B85] px-5 py-2 mt-6 lg:mt-12 rounded-lg shadow-md text-white font-semibold">Download My CV</button>
+          </a>
+          <button onClick={toggleDarkMode} className="bg-[#368B85] px-5 py-2 mt-6 lg:mt-12 rounded-lg shadow-md text-white font-semibold">
+            {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+          </button>
         </div>
       </div>
     </BackgroundBeamsWithCollision>
